@@ -1,0 +1,13 @@
+<div class="ml-5 mt-5">
+<div class="vertical-center" >    
+<form #f="ngForm"  action = "">
+    <input type="text" ngModel name="userName" #userName="ngModel">
+    <input type="text" ngModel name="password" #password="ngModel">
+    <input type="button" name="" value="authenticate" (click)="doAuthenticate(userName.value, password.value)">
+</form>
+</div>
+<br>
+<div [hidden]="showAuthenticationError">
+   <p class="text-warning"> Authentication error, user/password must not be empty</p>
+</div>
+</div>

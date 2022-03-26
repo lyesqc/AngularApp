@@ -1,0 +1,17 @@
+ <table class="table" style="width:70%;margin: auto;">
+    <thead class="thead-dark">
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let todo of todos">
+            <th scope="row"><a  id="{{todo.id}}" (click)="getItemDetail(todo.id, todo.title)">{{todo.userId}}</a></th>
+             
+            <td *ngIf="updateId!=todo.id">{{todo.title}}</td>
+            <td *ngIf="updateId==todo.id"> 
+                    <input   [(ngModel)]="title" id="{{todo.title}}" /> 
+                    <button class="btn btn-outline-success ml-5" (click)="save(todo,title )" value="save">save</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
